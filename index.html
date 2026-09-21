@@ -231,10 +231,10 @@ body {
 }
 
 /* =========================
-   LLUVIA DE TULIPANES
+   LLUVIA DE FLORES AMARILLAS
 ========================= */
 
-.tulipan-lluvia {
+.flor-amarilla-lluvia {
   position: fixed;
   top: -12vh;
 
@@ -287,7 +287,7 @@ body {
    EFECTOS AL HACER CLICK
 ========================= */
 
-.click-tulipan {
+.click-flor-amarilla {
   position: fixed;
 
   z-index: 100;
@@ -297,7 +297,7 @@ body {
   font-size: clamp(25px, 5vmin, 48px);
 
   animation:
-    explosionTulipan 1.8s ease-out forwards;
+    explosionFlorAmarilla 1.8s ease-out forwards;
 
   filter:
     drop-shadow(0 0 8px rgba(255,150,200,0.8));
@@ -319,7 +319,7 @@ body {
     drop-shadow(0 0 8px rgba(255,80,150,0.8));
 }
 
-@keyframes explosionTulipan {
+@keyframes explosionFlorAmarilla {
 
   0% {
     opacity: 0;
@@ -1882,32 +1882,32 @@ setInterval(() => {
 
 
 /* =====================================================
-   LLUVIA DE TULIPANES
+   LLUVIA DE FLORES AMARILLAS
 ===================================================== */
 
 const floresAmarillas = [
 
-  "🌷",
-  "🌷",
-  "🌷",
-  "🌷",
-  "🌷",
-  "🌷",
-  "🌷"
+  "🌼",
+  "🌼",
+  "🌼",
+  "🌼",
+  "🌼",
+  "🌼",
+  "🌼"
 
 ];
 
-function crearTulipanLluvia() {
+function crearFlorAmarillaLluvia() {
 
-  const tulipan =
+  const flor =
     document.createElement(
       "span"
     );
 
-  tulipan.className =
-    "tulipan-lluvia";
+  flor.className =
+    "flor-amarilla-lluvia";
 
-  tulipan.textContent =
+  flor.textContent =
     floresAmarillas[
       Math.floor(
         Math.random() *
@@ -1915,19 +1915,19 @@ function crearTulipanLluvia() {
       )
     ];
 
-  tulipan.style.left =
+  flor.style.left =
     Math.random() * 100 +
     "vw";
 
-  tulipan.style.animationDuration =
+  flor.style.animationDuration =
     (4 + Math.random() * 5) +
     "s";
 
-  tulipan.style.animationDelay =
+  flor.style.animationDelay =
     (Math.random() * 1.5) +
     "s";
 
-  tulipan.style.fontSize =
+  flor.style.fontSize =
     (22 + Math.random() * 24) +
     "px";
 
@@ -1937,7 +1937,7 @@ function crearTulipanLluvia() {
 
   setTimeout(() => {
 
-    tulipan.remove();
+    flor.remove();
 
   }, 11000);
 }
@@ -1958,7 +1958,7 @@ setInterval(() => {
     i++
   ) {
 
-    crearTulipanLluvia();
+    crearFlorAmarillaLluvia();
 
   }
 
@@ -1966,10 +1966,10 @@ setInterval(() => {
 
 
 /* =====================================================
-   EXPLOSIÓN AL HACER CLICK
+   EXPLOSIÓN DE FLORES Y CORAZONES AL HACER CLICK
 ===================================================== */
 
-function crearTulipanesAlClick(
+function crearFloresAmarillasAlClick(
   x,
   y
 ) {
@@ -1988,10 +1988,10 @@ function crearTulipanesAlClick(
       );
 
     elem.className =
-      "click-tulipan";
+      "click-flor-amarilla";
 
     elem.textContent =
-      "🌷";
+      "🌼";
 
     const angulo =
       Math.random() *
@@ -2047,7 +2047,7 @@ function crearTulipanesAlClick(
   }
 
 
-  /* Corazones */
+  /* Corazones amarillos */
 
   for (
     let i = 0;
@@ -2065,8 +2065,8 @@ function crearTulipanesAlClick(
 
     corazon.textContent =
       Math.random() > 0.5
-        ? "❤️"
-        : "💗";
+        ? "💛"
+        : "💛";
 
     const angulo =
       Math.random() *
@@ -2123,7 +2123,7 @@ document.addEventListener(
   "click",
   function(event) {
 
-    crearTulipanesAlClick(
+    crearFloresAmarillasAlClick(
       event.clientX,
       event.clientY
     );
